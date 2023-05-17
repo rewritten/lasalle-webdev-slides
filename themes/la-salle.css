@@ -1,0 +1,28 @@
+/* @theme la-salle */
+@import 'gaia';
+
+ol b,
+ol strong {
+    background-color: cyan;
+    font-weight: 900;
+}
+
+:root {
+    background-color: aliceblue;
+}
+
+header {
+    text-align: center;
+}
+
+section {
+    width: 1280px;
+    height: 960px;
+    overflow: hidden;
+    font-size: 40px;
+    padding: 80px 60px;
+}
+
+ul {
+    list-style: "▪️ ";
+}
