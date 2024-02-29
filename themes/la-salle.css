@@ -1,28 +1,83 @@
 /* @theme la-salle */
-@import 'gaia';
+@import "gaia";
 
 ol b,
 ol strong {
-    background-color: cyan;
-    font-weight: 900;
+  background-color: color-mix(in hsl, var(--background-color) 60%, black);
+  font-weight: 900;
+  display: block;
 }
 
 :root {
-    background-color: aliceblue;
+  --background-color: white;
+  font-size: 30px;
+  background-color: var(--background-color);
+  color: color-mix(in hsl, var(--background-color) 20%, black 80%);
+}
+
+section.front {
+  text-align: center;
+  background-image: url(../themes/frontpage-bg.png);
+  background-size: contain;
+  padding-top: 30vh;
+}
+
+section.front footer {
+  background-color: transparent;
+  height: 100px;
+  padding-right: 1em;
+}
+
+section.front blockquote {
+  border: 1px solid black;
+  border-radius: 1em;
+  padding: 1em;
+  font-size: medium;
+}
+
+section.front blockquote::before,
+section.front blockquote::after {
+  content: "";
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  align-items: center;
+  background-color: #a2bde1;
+  padding-right: 10em;
 }
 
 header {
-    text-align: center;
+  text-align: center;
+}
+
+h1 {
+  color: #333399;
+}
+
+section.chapter-front {
+  padding-top: 40vh;
+}
+
+section.chapter-front::after {
+  content: "";
+}
+
+section.chapter-front footer,
+section.chapter-front header {
+  display: none;
 }
 
 section {
-    width: 1280px;
-    height: 960px;
-    overflow: hidden;
-    font-size: 40px;
-    padding: 80px 60px;
+  width: 1280px;
+  height: 960px;
+  overflow: hidden;
+  font-size: 40px;
+  padding: 80px 60px;
 }
 
 ul {
-    list-style: "▪️ ";
+  list-style: "🟦 ";
 }

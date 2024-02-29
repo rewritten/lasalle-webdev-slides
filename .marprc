@@ -1,0 +1,13 @@
+# format: yaml
+allowLocalFiles: true
+options:
+  looseYAML: false
+  markdown:
+    breaks: false
+pdf: true
+html: true
+theme: la-salle
+themeSet: themes
+inputDir: ./slides
+output: ./pdf
+paginate: true

@@ -86,10 +86,6 @@ Alumno
 ---
 
 <!-- header: "" -->
-<!-- header: "" -->
-<!-- header: "" -->
-<!-- header: "" -->
-<!-- header: "" -->
 
 1. Introducción al Módulo 2
 2. **Objetivos de las sesiones sobre JavaScript**
@@ -120,9 +116,6 @@ Entre las referencias que nos pueden ayudar a cumplir estos objetivos tenemos:
 - Book - Eloquent JavaScript: <https://eloquentjavascript.net/>
 
 ---
-<!-- header: "" -->
-<!-- header: "" -->
-<!-- header: "" -->
 <!-- header: "" -->
 
 1. Introducción al Módulo 2
@@ -290,24 +283,21 @@ guión
 ---
 <!-- header: Fundamentos de JS - Tipos de Datos -->
 
-## Sintaxis básica de Javascript – Tipos de Datos
+## Tipos de Datos
 
-Concepto y Ejemplo
-■ Cualquier valor que se utiliza en JavaScript es de un cierto tipo. En JavaScript existen los siguientes tipos de datos primitivos:
-■ number:
-■ Puede contener números enteros (integer), decimales (float), hexadecimales,
-octales, exponentes y
-■ los números especiales NaN e Infinity.
-■ string: Cualquier número de caracteres entre comillas simples, dobles o tildes
-■ boolean: puede ser TRUE or FALSE
-■ undefined: Es un tipo de datos con un solo valor: undefined Lo
-devuelve JS cuando no existe una variable o no está inicializada.
-■ null: Otro tipo de datos con un solo valor: null Lo podemos asignar
-nosotros para inicializar a vacío.
-■ Tipos primitivos avanzados: bigint y symbol
-■ Cualquier valor que no pertenezca a uno de estos 5 tipo de
-  primitivas es un objeto.
-Ejemplo
+Cualquier valor que se utiliza en JavaScript es de un cierto tipo. En JavaScript existen los siguientes tipos de datos primitivos:
+
+- `number`: Cualquier valor numérico. Incluye también dos versiones de `0` (una de ellas es `-0`), y  además los números especiales `NaN` e `Infinity`.
+- `string`: Cualquier número de caracteres entre comillas simples, dobles o tildes
+- `boolean`: puede ser TRUE or FALSE
+
+---
+
+- `undefined`: Es un tipo de datos con un solo valor: undefined
+  Lo devuelve JS cuando no existe una variable o no está inicializada.
+- `function`: El tipo de valores de las funciones.
+- Tipos primitivos avanzados: `bigint`, `symbol` y los arrays tipados.
+- `object`: Cualquier valor que no pertenezca a uno de los tipos primitivos anteriormente descritos es un objeto.
 
 ---
 <!-- header: "" -->
@@ -327,9 +317,11 @@ Ejemplo
 ---
 <!-- header: Objetos y Valores Especiales -->
 
-■ La clase Object representa uno de los tipos de datos en Javascript. Es usado para guardar una colección de datos definidos y entidades más complejas.
-■ Si queremos definir un objeto, utilizamos llaves {}
-■ Los elementos de un objeto (propiedades) los separamos por coma
+La clase Object representa uno de los tipos de datos en Javascript. Es usado para guardar una colección de datos definidos y entidades más complejas.
+
+Si queremos definir un objeto, utilizamos llaves `{}`
+
+Los elementos de un objeto (propiedades) los separamos por coma
 ■ El par clave/valor (key/value) lo dividimos con dos puntos :
 ■ Las claves (keys, nombres de las propiedades) pueden ir entre comillas
 
@@ -361,7 +353,7 @@ let book = {
 
 ---
 
-■ Los objetos pueden contener como propiedad una función, en ese caso decimos que esta propiedad es un método del objeto:
+Los objetos pueden contener como propiedad una función, en ese caso decimos que esta propiedad es un *método* del objeto:
 
 ```js
 let dog = {
@@ -479,12 +471,12 @@ a; // [1, undefined]
 
 Los arrays definidos como objetos, disponen de unos cuantos métodos muy útiles:
 
-- push()
-- pop()
-- sort()
-- join()
-- slice()
-- splice()
+- `push()`
+- `pop()`
+- `sort()`
+- `join()`
+- `slice()`
+- `splice()`
 
 Ejercicio: busca (en MDN) la definición de cada uno de los métodos listados arriba y luego haz un ejemplo para cada uno de ellos (se hará presentación en clase).
 
@@ -496,7 +488,6 @@ Los arrays:
 - Podemos consular y modificar su tamaño con la propiedad length
 - Técnicamente son objetos (las claves se autogeneran en orden numérico).
 - Tienen métodos: `push`, `pop`, `sort`, `join`, `slice`, `splice`, `includes`...
-Ejemplo
 
 ---
 <!-- header: "" -->
@@ -516,7 +507,7 @@ Ejemplo
 ---
 
 <!-- header: Operadores -->
-## Sintaxis básica de Javascript – Operadores
+## Fundamentos de JS – Operadores
 
 Clasificamos a los operadores en:
 
@@ -527,6 +518,8 @@ Clasificamos a los operadores en:
 - Operadores de cadena
 - Operador condicional (ternario)
 - Operador coma
+
+...
 
 ---
 
@@ -544,18 +537,18 @@ Introducción
 
 ### Operadores aritméticos
 
-- Addition: `1 + 2; // 3`
-- Subtraction: `2 – 1; // 1`
-- Multiplication: `2 * 3; // 6`
-- Division: `6 / 4; // 1.5` (Division by 0 returns `Infinity`)
-- Remainder: `5 % 3; // 2`
-- Power: `2 ** 3; // 8`
-- Increment/decrement value in 1:
+- Suma: `1 + 2; // 3`
+- Diferencia: `2 – 1; // 1`
+- Multiplicación: `2 * 3; // 6`
+- División: `6 / 4; // 1.5` (Division by 0 returns `Infinity`)
+- Resta: `5 % 3; // 2`
+- Potencia: `2 ** 3; // 8`
+- Incremento/decremento de un valor:
 
   ```js
   let base = 100;
-  let baseMasUno = base++;
-  let baseMenosUno = base--;
+  base++;
+  base--;
   ```
 
 ---
@@ -564,7 +557,7 @@ Introducción
 
 El operador simple de asignación es `=`.
 
-A la izquierda del operador hay una variable (`let` o `var`), a la derecha una expresión que se evalúa y se asigna a la variable.
+A la izquierda del operador hay una variable, a la derecha una expresión que se evalúa y se asigna a la variable.
 
 El valor de la expresión es igual al valor asignado a la variable.
 
@@ -581,21 +574,47 @@ base += 5; // 6
 
 ---
 
-### Operadores Lógicos
+### Operadores lógicos
 
-- `&&` (AND lógico). `expr1 && expr2` devuelve `expr1` si se puede convertir a `false`; de lo contrario, devuelve `expr2`. Por lo tanto, cuando se usa con valores booleanos, `&&` devuelve `true` si ambos operandos son `true`; de lo contrario, devuelve `false`.
-- `||` (OR lógico). `expr1 || expr2` devuelve `expr1` si se puede convertir a `true`; de lo contrario, devuelve `expr2`. Por lo tanto, cuando se usa con valores booleanos, `||` devuelve `true` si alguno de los operandos es `true`; si ambos son falsos, devuelve `false`.
-- `!` (NOT lógico). `!expr` devuelve `false` si su único operando se puede convertir a `true`; de lo contrario, devuelve `true`.
+Se usan con valores booleanos (`true`, `false`).
 
----
-
-Los operadores lógicos se utilizan normalmente con valores booleanos (lógicos); cuando lo son, devuelven un valor booleano.
-
-Sin embargo, los operadores `&&` y `||` en realidad devuelven el valor de uno de los operandos especificados, por lo que si estos operadores se utilizan con valores no booleanos, pueden devolver un valor no booleano.
+- `&&` (AND lógico). `expr1 && expr2` devuelve `true` si tanto `expr1` como `expr2` son `false`; de lo contrario, devuelve `false`.
+- `||` (OR lógico). `expr1 || expr2` devuelve `true` cuando cualquiera de `expr1` y `expr2` es `true`; de lo contrario, devuelve `false`.
+- `!` (NOT lógico). `!expr` devuelve `true` si `expr` es `false`; de lo contrario, devuelve `false`.
 
 ---
 
-### Operadores de Comparación
+Cuando los términos a evaluar no son booleanos, se considera el *valor de verdad* de cada término.
+
+Los operadores lógicos binarios (`&&` y `||`) evalúan el primer operando, y si es suficiente para determinar el valor de la expresión, lo devuelven. De lo contrario, evalúan el segundo operando y lo devuelven.
+
+```js
+"hola" && "adios"; // "adios"
+"hola" || "adios"; // "hola"
+```
+
+Los términos que tiene un "valor falso" en este contexto son `0`, `NaN`, `null`, `undefined`, `""` y `false`.
+
+---
+
+Puesto que estos operadores no evalúan siquiera su segundo argumento, suelen utilizarse para control de flujo:
+
+```js
+"hola" && alert("hola"); // alert("hola")
+"hola" || alert("hola"); // no se invoca alert()
+```
+
+Si quisiéramos representar `or` como una función, escribiríamos
+
+```js
+or("hola", alert("hola"))
+```
+
+pero en este caso la función `alert` se invocaría antes de llamar a `or`, y no es lo que queremos.
+
+---
+
+### Operadores de comparación
 
 Un operador de comparación compara sus operandos y devuelve un valor lógico en función de si la comparación es verdadera (true) o falsa (false).
 
@@ -634,31 +653,49 @@ Busca información sobre los siguientes operadores y haz una breve presentación
   
 ---
 
-### Conversiones de Tipo
+### Conversiones de tipo
 
-Si utilizamos un numero entre comillas (string) en una operación aritmética JavaScript lo convierte en número
+Si utilizamos un numero entre comillas (string) en una operación aritmética JavaScript lo convierte en número:
 
-- ¡Cuidado! `undefined` y `null` devuelven cosas diferentes al convertirlas a numero.
-  (Hacer: `1 * undefined;` y hacer: `1 * null;`)
+```js
+"2" * "3"; // 6
+"2" * 3; // 6
+5 - "2"; // 3
+```
 
-Si utilizamos true o false entre comillas JavaScript lo convierte a string
+pero si el operador es `+` lo convierte en string:
 
----
-
-Tradicionalmente la doble negación se ha usado para convertir cualquier valor en su Booleano correspondiente. Actualmente es más elegante y limpio usar `Boolean(objeto)`. Aplicándolo podemos comprobar como cualquier valor convertido a Booleano es true excepto:
-
-- `""`
-- `null`
-- `undefined`
-- `0`
-- `NaN`
-- `false`
-
-Ejemplo
+```js
+"1" + 1; // "11"
+1 + "1"; // "11"
+```
 
 ---
 
-### Precedencia de Operadores
+Se puede invocar explícitamente la conversión usando funciones nativas:
+
+```js
+Number("2"); // 2
+String(2); // "2"
+Boolean(2); // true
+```
+
+De esta forma podemos ver más claramente los distintos tipos de datos:
+
+```js
+Number(null); // 0
+Number(undefined); // NaN
+Number(true); // 1
+Boolean(0); // false
+Boolean(""); // false
+Boolean([]); // true
+String([]); // ""
+Boolean(String([])); // false
+```
+
+---
+
+### Precedencia de operadores
 
 La precedencia de los operadores determina el orden en que se aplican al evaluar una expresión. Puedes redefinir la precedencia de los operadores mediante el uso de paréntesis y en caso de duda es mejor hacerlo (mejor explícito que implícito).
 
@@ -724,168 +761,253 @@ isNaN(parseInt(NaN)) ; // Resultado:
 ---
 <!-- header: "" -->
 
-## Índice
-
-1. IntroducciónalMódulo2
-2. ObjetivosdelassesionessobreJavaScript 3. HistoriayEvolucióndeJavaScript
-4. FundamentosdeJS–Variables
-5. FundamentosdeJS-TiposdeDatos
-6. ObjetosyValoresEspeciales
-7. FundamentosdeJS–Operadores
-8. FundamentosdeJS–Expresiones
-9. EstructurasdeControldeFlujo 10. Alcance
-11.Cierre y Conclusiones
-
----
-
-## Sintaxis básica de Javascript – Expresiones
-
-■ Una expresión es cualquier unidad de código válida que se resuelve en un valor.
-■ Toda expresión sintácticamente válida se resuelve en algún valor, pero conceptualmente, hay dos tipos de expresiones:
-■ con efectos secundarios (por ejemplo: las que asignan valor a una variable). Ej.: x = 7; (las llamamos statements)
-■ las que en algún sentido evalúan y por lo tanto se resuelven en un valor. Ej.: 3 + 4; (no asigna el resultado a ninguna variable). (las llamamos expresiones)
+1. Introducción al Módulo 2
+2. Objetivos de las sesiones sobre JavaScript
+3. Historia y Evolución de JavaScript
+4. Fundamentos de JS – Variables
+5. Fundamentos de JS - Tipos de Datos
+6. Objetos y Valores Especiales
+7. Fundamentos de JS – Operadores
+8. **Fundamentos de JS – Expresiones**
+9. Estructuras de Control de Flujo
+10. Alcance
+11. Cierre y Conclusiones
 
 ---
 
-## Sintaxis básica de Javascript – Expresiones
+## Fundamentos de JS – Expresiones
 
-■ JavaScript tiene las siguientes categorías de expresión:
-■ Aritméticas: se evalúa como un número, por ejemplo 3.14159.
+Una expresión es cualquier unidad de código válida que se resuelve en un valor.
+
+Toda expresión sintácticamente válida se resuelve en algún valor, pero conceptualmente, hay dos tipos de expresiones:
+
+- con efectos secundarios (por ejemplo: las que asignan valor a una variable). Ej.: `x = 7`; (las llamamos statements)
+- las que en algún sentido evalúan y por lo tanto se resuelven en un valor. Ej.: `3 + 4`; (no asigna el resultado a ninguna variable). (las llamamos expresiones)
+
+---
+
+<!-- header: Fundamentos de JS – Expresiones -->
+
+JavaScript tiene las siguientes categorías de expresión:
+
+- Aritméticas: se evalúa como un número, por ejemplo `3.14159`.
 (Generalmente usa operadores aritméticos).
-■ Cadenas: se evalúa como una cadena de caracteres, por ejemplo, "Fred" o "234". (Generalmente usa operadores de cadena).
-■ Lógicas: se evalúan como true o false. (A menudo implica operadores lógicos).
-■ Expresiones primarias: palabras clave básicas y expresiones generales en JavaScript.
-■ Expresiones del lado izquierdo: los valores del lado izquierdo son el destino de una asignación.
+- Cadenas: se evalúa como una cadena de caracteres, por ejemplo, `"Fred"` o `"234"`. (Generalmente usa operadores de cadena).
+- Lógicas: se evalúan como `true` o `false`. (A menudo implica operadores lógicos).
+- Expresiones primarias: palabras clave básicas y expresiones generales en JavaScript.
+- Expresiones del lado izquierdo: los valores del lado izquierdo son el destino de una asignación.
 
 ---
 
-## Sintaxis básica de Javascript – Expresiones
+## Expresiones primarias: palabras clave básicas y expresiones generales en JavaScript
 
-■ Expresiones primarias: palabras clave básicas y expresiones generales en JavaScript.
-■this (lo veremos más adelante en el temario). Utiliza la palabra clave this para hacer referencia al objeto actual. En general, this se refiere al objeto que llama en un método. Usa this con la notación de punto o entre corchetes:
-■ this['propertyName']
-■ this.propertyName
-■ Operador de agrupación (). El operador de agrupación () controla la precedencia de la evaluación en las expresiones.
+this (lo veremos más adelante en el temario). Utiliza la palabra clave this para hacer referencia al objeto actual. En general, this se refiere al objeto que llama en un método. Usa this con la notación de punto o entre corchetes:
+
+- `this['propertyName']`
+- `this.propertyName`
+
+Operador de agrupación (). El operador de agrupación () controla la precedencia de la evaluación en las expresiones.
 
 ---
 
-## Sintaxis básica de Javascript – Expresiones
-
-■ Expresiones del lado izquierdo: los valores del lado izquierdo son el destino de una asignación.
-■new (lo veremos más adelante en el temario). Puedes utilizar el operador new para crear una instancia de un tipo de objeto definido por el usuario o de uno de los tipos de objeto integrados. Utiliza new de la siguiente manera:
-■ let objectName = new objectType([param1,..., paramN]);
-■super (lo veremos más adelante en el temario). La palabra clave super se utiliza para llamar a funciones en el padre de un objeto. Es útil con clases llamar al constructor padre, por ejemplo.
+- new (lo veremos más adelante en el temario). Puedes utilizar el operador new para crear una instancia de un tipo de objeto definido por el usuario o de uno de los tipos de objeto integrados. Utiliza new de la siguiente manera:
+- `let objectName = new objectType([param1,..., paramN]);`
+- `super` (lo veremos más adelante en el temario). La palabra clave super se utiliza para llamar a funciones en el padre de un objeto. Es útil con clases llamar al constructor padre, por ejemplo.
 ■ super([arguments]); // llama al constructor padre.
 ■ super.functionOnParent([arguments]);
 
 ---
 
-## Índice
+<!-- header: "" -->
 
-1. IntroducciónalMódulo2
-2. ObjetivosdelassesionessobreJavaScript 3. HistoriayEvolucióndeJavaScript
-4. FundamentosdeJS–Variables
-5. FundamentosdeJS-TiposdeDatos
-6. ObjetosyValoresEspeciales
-7. FundamentosdeJS–Operadores
-8. FundamentosdeJS–Expresiones
-9. EstructurasdeControldeFlujo
+1. Introducción al Módulo 2
+2. Objetivos de las sesiones sobre JavaScript
+3. Historia y Evolución de JavaScript
+4. Fundamentos de JS – Variables
+5. Fundamentos de JS - Tipos de Datos
+6. Objetos y Valores Especiales
+7. Fundamentos de JS – Operadores
+8. Fundamentos de JS – Expresiones
+9. **Estructuras de Control de Flujo**
 10. Alcance
-11.Cierre y Conclusiones
+11. Cierre y Conclusiones
 
 ---
+<!-- header: Estructuras de Control de Flujo -->
 
-## Estructuras de Control de Flujo – Bloque
+JavaScript admite un compacto conjunto de declaraciones, específicamente declaraciones de control de flujo, que puedes utilizar para incorporar una gran cantidad de interactividad en tu aplicación.
 
-■ JavaScript admite un compacto conjunto de declaraciones, específicamente declaraciones de control de flujo, que puedes utilizar para incorporar una gran cantidad de interactividad en tu aplicación.
-■ Bloque: La declaración más básica es una declaración de bloque, que se utiliza para agrupar instrucciones. El bloque está delimitado por un par de llaves:
+### Bloque
+
+La declaración más básica es una declaración de bloque, que se utiliza para agrupar instrucciones. El bloque está delimitado por un par de llaves:
+
+```js
 {
-statement1; statement2; ⋮ statementN;
+  statement1; 
+  statement2;
+  ⋮ 
+  statementN;
 }
-Ejemplo
+```
 
 ---
 
-## Estructuras de Control de Flujo – Condicionales (if...else)
+### Condicionales
 
-■ Una expresión condicional es un conjunto de instrucciones que se ejecutarán si una condición especificada es verdadera. JavaScript admite dos expresiones condicionales: if...else y switch.
-■ If...else: Utiliza la expresión if para ejecutar una instrucción si una condición lógica es true. Utiliza la cláusula opcional else para ejecutar una instrucción si la condición es false:
-if (condition) { statement1;
-} else { statement2;
-}
-■ Se recomienda evitar ifs anidados lectura/seguimiento del código).
-(dado que no
-facilitan la
+Una expresión condicional es un conjunto de instrucciones que se ejecutarán si una condición especificada es verdadera. JavaScript admite dos expresiones condicionales: `if+else` y `switch+case`.
 
 ---
 
-## Estructuras de Control de Flujo – Condicionales (switch)
+#### if+else
 
-■ switch: Una instrucción switch permite que un programa evalúe una expresión e intente hacer coincidir el valor de la expresión con una etiqueta case. Si la encuentra, el programa ejecuta la declaración asociada.
-switch (expression) { case value_1:
-statements_1
-[break;] case value_2:
-statements_2 [break;]
-...
-default: statements_def [break;]
+Utiliza la expresión if para ejecutar una instrucción si una condición lógica es true. Utiliza la cláusula opcional else para ejecutar una instrucción si la condición es false:
+
+```js
+if (condition) { 
+  statement1;
+} else { 
+  statement2;
 }
-Ejemplo
+```
+
+■ Se recomienda evitar ifs anidados lectura/seguimiento del código). (dado que no facilitan la
 
 ---
 
-## Estructuras de Control de Flujo – Bucles
+#### switch+case
 
-■ Los bucles ofrecen una forma rápida y sencilla de hacer algo repetidamente.
-■ Hay diferentes tipos de bucles, pero esencialmente, todos hacen lo mismo: repiten una acción varias veces. (¡Ten en cuenta que es posible que ese número sea cero!).
-■ Los diversos mecanismos de bucle ofrecen diferentes formas de determinar los puntos de inicio y terminación del bucle. Hay varias situaciones que son fácilmente atendidas por un tipo de bucle que por otros:
-■ Declaración for, for...in, for...of
-■ Declaración while, do...while
-■ Declaración break, continue
-■ Declaración labeled
+Una instrucción `switch` permite que un programa evalúe una expresión y compare el valor de la expresión con una etiqueta case. Si la encuentra, el programa ejecuta el bloque asociado.
+
+```js
+switch (expression) {
+  case value_1:
+    statements_1;
+    break;
+  case value_2:
+  case value_3:
+    statements_2;
+    break;
+  // ...
+  default:
+    statements_default;
+}
+```
 
 ---
 
-## Estructuras de Control de Flujo – Bucles (for)
+### Bucles
 
-■ for: Un ciclo for se repite hasta que una condición especificada se evalúe como false.
-for ([expresiónInicial]; [expresiónCondicional]; [expresiónDeActualización]) { instrucciones
-}
-■ for...in: La instrucción for...in itera una variable especificada sobre todas las propiedades enumerables de un objeto. Para cada propiedad distinta, JavaScript ejecuta las instrucciones especificadas.
-for (variable in objeto) { instrucciones
-}
+Los bucles ofrecen una forma rápida y sencilla de hacer algo repetidamente.
 
----
+Hay diferentes tipos de bucles, pero esencialmente, todos hacen lo mismo: repiten una acción varias veces. (¡Ten en cuenta que es posible que ese número sea cero!).
 
-## Estructuras de Control de Flujo – Bucles (for)
-
-■ for...of: La declaración for...of crea un bucle que se repite sobre objetos iterables (incluidos Array, Map, Set, argumentos de objetos y así sucesivamente), invocando un bucle de iteración personalizado con declaraciones que se ejecutarán para el valor de cada propiedad.
-for (variable of objeto) { instrucciones
-}
+Los diversos mecanismos de bucle ofrecen diferentes formas de determinar los puntos de inicio y terminación del bucle. Hay varias situaciones que son fácilmente atendidas por un tipo de bucle que por otros.
 
 ---
 
-## Estructuras de Control de Flujo – Bucles (while)
+#### for(;;)
 
-■ while: Una declaración while ejecuta sus instrucciones siempre que una condición especificada se evalúe como true. Una instrucción while tiene el siguiente aspecto:
-while (condición) { instrucciones
+La construcción más clásica es un ciclo que se repite con una comprobación de condición:
+
+```js
+for ([inicial]; [condicional]; [actualización]) {
+  instrucciones
 }
-■ do...while: a instrucción do...while se repite condición especificada se evalúe como falsa:
-do { instrucciones
+```
+
+En la expresión inicial podemos declarar variables cuyo ámbito será estrictamente el bloque del bucle.
+
+La expresión condicional se evalua al principio, y mientras sea `true` se ejecuta el bloque de instrucciones. Al final de cada iteración se ejecuta la expresión de actualización.
+
+---
+
+La construcción `for` se encuentra en casi todos los lenguajes de programación.
+
+```js
+for (let i = 0; i < 10; i++) {
+  console.log(i);
+}
+```
+
+---
+
+#### for+of
+
+Repite un bloque para cada elemento de un array, en orden:
+
+```js
+for (let elemento of array) {
+  instrucciones
+}
+```
+
+es **mucho más legible** que su equivalente expresión `for(;;)` y es siempre la forma recomendada de iterar sobre un array u otros objetos iterables.
+
+```js
+for (let i = 0; i < array.length; i++) {
+  let elemento = array[i];
+  instrucciones
+}
+```
+
+---
+
+#### for+in
+
+La instrucción `for...in` itera sobre todas las *propiedades enumerables* de un objeto.
+
+```js
+for (let nombrePropiedad in objeto) {
+  instrucciones
+}
+```
+
+No es muy frecuente usarlo ya que los objetos normalmente no tienen propiedades arbitrarias.
+
+Antiguos usos de objetos como diccionarios se han sustituido por el uso de `Map` y `WeakMap`, que se iteran mejor con
+
+```js
+for (let [clave, valor] of mapa) { ... }
+```
+
+---
+
+#### while
+
+Es una forma más simple de bucle que `for(;;)`, donde solamente queda la expresión condicional:
+
+```js
+while (condición) { 
+  instrucciones
+}
+```
+
+verifica la condición al principio de cada iteración.
+
+```js
+do { 
+  instrucciones
 } while (condición);
-hasta
-que una
+```
+
+verifica la condición al final de cada iteración.
 
 ---
 
-## Estructuras de Control de Flujo – Bucles (break)
+#### break y continue
 
-■ break sirve para terminar un bucle, switch o junto con una declaración etiquetada.
-■ Cuando usas break sin una etiqueta, inmediatamente termina el while, do-while, for o switch y transfiere el control a la siguiente declaración.
-■ Cuando usas break con una etiqueta, termina la declaración etiquetada especificada.
-■ La sintaxis de la instrucción break se ve así: break;
+`break` sirve para terminar un bucle, switch o junto con una declaración etiquetada.
+
+Cuando usas break sin una etiqueta, inmediatamente termina el while, do-while, for o switch y transfiere el control a la siguiente declaración.
+
+Cuando usas break con una etiqueta, termina la declaración etiquetada especificada.
+
+La sintaxis de la instrucción break se ve así: break;
 break [label];
-■ La primera forma de la sintaxis termina el bucle envolvente más interno o el switch.
-■ La segunda forma de la sintaxis termina la instrucción etiquetada específica.
+
+La primera forma de la sintaxis termina el bucle envolvente más interno o el switch.
+
+La segunda forma de la sintaxis termina la instrucción etiquetada específica.
 
 ---
 
@@ -942,18 +1064,19 @@ Referencia
 
 ---
 
-## Índice
+<!-- header: "" -->
 
-1. IntroducciónalMódulo2
-2. ObjetivosdelassesionessobreJavaScript 3. HistoriayEvolucióndeJavaScript
-4. FundamentosdeJS–Variables
-5. FundamentosdeJS-TiposdeDatos
-6. ObjetosyValoresEspeciales
-7. FundamentosdeJS–Operadores
-8. FundamentosdeJS–Expresiones
-9. EstructurasdeControldeFlujo
-10. Alcance
-11.Cierre y Conclusiones
+1. Introducción al Módulo 2
+2. Objetivos de las sesiones sobre JavaScript
+3. Historia y Evolución de JavaScript
+4. Fundamentos de JS – Variables
+5. Fundamentos de JS - Tipos de Datos
+6. Objetos y Valores Especiales
+7. Fundamentos de JS – Operadores
+8. Fundamentos de JS – Expresiones
+9. Estructuras de Control de Flujo
+10. **Alcance**
+11. Cierre y Conclusiones
 
 ---
 
@@ -981,18 +1104,19 @@ Ejemplo
 
 ---
 
-## Índice
+<!-- header: "" -->
 
-1. IntroducciónalMódulo2
-2. ObjetivosdelassesionessobreJavaScript 3. HistoriayEvolucióndeJavaScript
-4. FundamentosdeJS–Variables
-5. FundamentosdeJS-TiposdeDatos
-6. ObjetosyValoresEspeciales
-7. FundamentosdeJS–Operadores
-8. FundamentosdeJS–Expresiones
-9. EstructurasdeControldeFlujo
+1. Introducción al Módulo 2
+2. Objetivos de las sesiones sobre JavaScript
+3. Historia y Evolución de JavaScript
+4. Fundamentos de JS – Variables
+5. Fundamentos de JS - Tipos de Datos
+6. Objetos y Valores Especiales
+7. Fundamentos de JS – Operadores
+8. Fundamentos de JS – Expresiones
+9. Estructuras de Control de Flujo
 10. Alcance
- 11.Cierre y Conclusiones
+11. **Cierre y Conclusiones**
 
 ---
 
